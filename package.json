@@ -10,7 +10,7 @@
     "jsdom": false
   },
   "dependencies": {
-    "jsdom": "^16.2.0"
+    "jsdom": "stoneG/jsdom#master"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.2",
@@ -43,6 +43,7 @@
     "build-iife": "rollup -c config/rollup.config.iife.js",
     "build-test": "browserify test/turndown-test.js --outfile test/turndown-test.browser.js",
     "prepublish": "npm run build",
-    "test": "npm run build && npm run build-test && standard ./src/**/*.js && node test/turndown-test.js"
+    "test": "npm run build && npm run build-test && standard ./src/**/*.js && node test/turndown-test.js",
+    "postinstall": "cd ./node_modules/jsdom && yarn install"
   }
 }
